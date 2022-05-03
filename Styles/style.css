@@ -1,0 +1,454 @@
+/* global variables */
+:root {
+  /* Fonts */
+  --primaryFont: "Poppins", sans-serif;
+  --secondaryFont: "Montserrat Alternates", sans-serif;
+  --tertiaryFont: "Pacifico", cursive;
+  --tertiaryFontExtra: "Akaya Kanadaka", cursive;
+
+  /* Colors */
+  --primaryColor: #9ddcfa;
+  --primaryColorDark: #181414;
+  --primaryColorLight: #fffeff;
+  --secondaryColor: #707070;
+  --TertiaryColor: #ff424d;
+  --TertiaryColor2: #b5d4b9;
+  --DarkModeOpacity: #0a0a0ae3;
+  --backgroundColor: #1d2325;
+  --backgroundColorOpacity: #1d2325b0;
+  --primaryCardColor: #272c33a2;
+  --primaryCardColorLighter: #22272e60;
+
+  /* box shadows */
+  --boxShadowLightBehind: 0 0 2em -1em var(--DarkModeOpacity);
+  --boxShadowDarkOut: 0 0 5em 1em var(--DarkModeOpacity);
+
+  /*  */
+
+  --transition-5ms-Ease: all 0.5s ease;
+  --transition-backgroundColor-Ease: background-color 0.5s ease;
+
+  /* Sizes */
+  --cardBorderRadius: 0.5rem;
+  --btnBorderRadius: 0.25rem;
+
+  --imageBorderRadius: calc(0.5rem + var(--cardBorderRadius));
+  --cardBorderRadiusThin: 0.25rem;
+  --inputBorderRadius: 0.75rem;
+  --logoScale: 85%;
+  --navScale: 40%;
+  --btnFontSize: calc(1rem + 20% + 0.5vw + 0.5vh);
+  --navFontSize: calc(0.1rem + 30% + 0.5vw + 0.5vh);
+  --ParagraphFontSize: 25px;
+  --HeadFontSize: calc(1em + 0.5vh + 0.5vw);
+  --headTitleFontSize: calc(90% + 0.6vh + 0.6vw + 0.6rem);
+  --subTitleFontSize: calc(70% + 0.5vh + 0.5vw + 0.25rem);
+  --titleFontSize: calc(70% + 0.5vh + 0.5vw + 0.5rem);
+  --calcFontSize: calc(80% + 0.5vh + 0.5vw);
+  --dateFontSize: calc(1.2rem + 12%);
+}
+
+/* 
+    *
+    *
+    Global styling
+    *
+    *
+    */
+
+/* all content */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+/* document and body styling  */
+html,
+body {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: dark light;
+  /*
+    color-scheme is to tell the browser that this website supports dark and light mode
+    dark is the initial state if the user preference is light mode the the second parameter light mode will take place     
+    not supported by FireFox < 96, internet explorer and safari IOS < 13   there is no way to support it if the user preference is light/dark mode
+    but if the user has no preference then it will initialed to dark and then changes by toggling the light/dark mode button */
+}
+
+/* body styling  */
+body {
+  position: relative;
+  max-width: 100vw;
+  line-height: 2em;
+  word-spacing: 1px;
+  overflow-x: hidden;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 2.5% 95% 2.5%; /* not supported by internet explorer and it's a way to complicated to support it */
+  justify-content: center;
+  align-items: center;
+  background: var(--backgroundColor);
+  font-family: var(--primaryFont);
+  background-attachment: fixed;
+}
+
+/* 
+    // Scroll bar
+    */
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--backgroundColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
+  border: var(--primaryColorDark) 2px solid;
+  border-radius: 5em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #365463;
+  cursor: pointer;
+}
+
+/* list styling */
+ul {
+  list-style: none;
+}
+
+ul.linksList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul.linksList {
+  display: contents; /* 'display: contents' is not supported by Internet Explorer. the above code is to support Internet Explorer*/
+}
+
+/* 
+    *
+    //font styling
+    *
+    */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.25em 0;
+  font-weight: 600;
+  font-size: var(--titleFontSize);
+  color: var(--primaryColor);
+  line-height: 2em;
+}
+
+p {
+  font-size: var(--ParagraphFontSize);
+  font-family: var(--secondaryFont);
+  line-height: 1.5em;
+  font-weight: 100;
+}
+
+/* links styling  */
+a {
+  text-decoration: none;
+  font-family: var(--secondaryFont);
+  color: var(--primaryColorLight);
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+a[isCurrentPage="true"] {
+  color: var(--TertiaryColor);
+  transform: scale(1.15);
+  font-weight: 900;
+}
+
+/* buttons */
+a.button {
+  font-family: var(--primaryFont);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25em 1.2em;
+  font-size: var(--btnFontSize);
+  height: calc(2.5vw + 2.5vh);
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  transform-origin: bottom;
+}
+
+a.button:hover {
+  transform: scale(0.95);
+}
+
+a.button > .btnSvgIcon {
+  max-width: 40px;
+  max-height: 40px;
+  margin-left: 2rem;
+}
+
+/* primary button */
+
+.PrimaryBtn {
+  --_primaryBtnColor: var(--primaryColorLight);
+  background-color: var(--primaryColor);
+  color: var(--_primaryBtnColor);
+  border-radius: var(--btnBorderRadius);
+}
+
+.PrimaryBtn:hover {
+  background-color: var(--primaryColorLight);
+  --_primaryBtnColor: var(--primaryColor);
+}
+
+.PrimaryBtn > .btnSvgIcon {
+  fill: var(--_primaryBtnColor);
+}
+
+/* secondary button */
+.SecondaryBtn {
+  --_secondaryBtnColor: var(--TertiaryColor);
+  --_borderDistance: -0.1rem;
+  background-color: transparent;
+  color: var(--_secondaryBtnColor);
+  position: relative;
+}
+
+.SecondaryBtn:hover {
+  --_secondaryBtnColor: var(--primaryColor);
+}
+
+.SecondaryBtn > .btnSvgIcon {
+  fill: var(--_secondaryBtnColor);
+}
+
+.SecondaryBtn::after {
+  content: "";
+  position: absolute;
+  top: var(--_borderDistance);
+  right: var(--_borderDistance);
+  z-index: -1;
+  width: 70%;
+  height: 100%;
+  border: 5px solid var(--_secondaryBtnColor);
+  border-left: none;
+  border-bottom: none;
+  border-radius: var(--btnBorderRadius);
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.SecondaryBtn::before {
+  content: "";
+  position: absolute;
+  bottom: var(--_borderDistance);
+  left: var(--_borderDistance);
+  z-index: -1;
+  width: 70%;
+  height: 100%;
+  border: 5px solid var(--_secondaryBtnColor);
+  border-top: none;
+  border-right: none;
+  border-radius: var(--btnBorderRadius);
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/* image sizing */
+img {
+  max-width: 100%;
+  object-fit: cover; /* is not supported by Internet Explorer. but it can be arranged using height and width */
+  aspect-ratio: 16 / 9; /* is not supported by Internet Explorer, Safari < 15, Safari on iOS < 15  arranged using height and width */
+}
+
+/* 
+    skip navigation bar
+*/
+
+.SkipNav {
+  position: absolute;
+  top: 0em;
+  left: 0.25em;
+  transform: translateY(-100%);
+  color: var(--primaryColorLight);
+  border: 2px solid;
+  z-index: 9999;
+  padding: 0 0.5em;
+  cursor: pointer;
+}
+
+.SkipNav:hover {
+  transition: all 0.2s ease-out;
+  color: var(--primaryColor);
+  padding: 0.2em 0.7em;
+}
+
+.SkipNav:focus {
+  transform: translateY(0%);
+  transition: all 0.5s ease-in;
+}
+
+/* 
+  *
+  *
+  **-**|======|**|===> Header content starts here <===|**-**|======|**-**
+  *
+  *
+  */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 9999;
+  gap: 10%;
+  background: var(--backgroundColorOpacity);
+}
+
+header[isInteracting="true"] {
+  height: 10vh;
+}
+
+/* Logo */
+.logoParent {
+  height: 90%;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: var(--transition-5ms-Ease);
+}
+.logoParent:hover {
+  transform: scale(1);
+}
+.mainLogo {
+  width: 100;
+  height: 100;
+  object-fit: contain;
+}
+
+/* navigation bar */
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.pageLink {
+  font-size: var(--navFontSize);
+  transform: scale(0.95);
+  transform-origin: bottom;
+  transition: var(--transition-5ms-Ease);
+  font-weight: 300;
+}
+.pageLink:hover {
+  transform: scale(1.15);
+  color: var(--TertiaryColor);
+  font-weight: bolder;
+}
+
+dropDownMenu {
+  transform: translate(100%, 10%);
+  position: relative;
+}
+
+.userAvatar {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: var(--primaryColor);
+  border: 4px solid var(--primaryColor);
+  cursor: pointer;
+}
+
+#userName {
+  font-size: calc(var(--btnFontSize) - 0.25rem);
+  font-weight: bolder;
+  font-family: var(--tertiaryFontExtra);
+  color: var(--primaryColor);
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+#userName::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 95%;
+  bottom: -0.75em;
+  left: 0.1em;
+  background-color: var(--primaryColor);
+  border-radius: 2.5rem;
+}
+
+.dropDownList {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  background-color: var(--primaryCardColor);
+  top: 100%;
+  left: 0;
+  height: 50vh;
+  width: 12.5vw;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  padding: 1em 0;
+  border-radius: var(--cardBorderRadius);
+  transform: scale(0) translate(-35%, -100%);
+  transform-origin: top top;
+  opacity: 0;
+  transition: var(--transition-5ms-Ease);
+}
+.dropDownLinkParent {
+  width: 110%;
+}
+.dropDownLink {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  align-content: center;
+  width: 100%;
+}
+#itemsInCartValue {
+  color: #ff424d;
+  fill: #fffeff;
+}
+.dropDownSvgIcon {
+  max-width: 25px;
+  max-height: 25px;
+  fill: var(--primaryColor);
+}
+.Mode {
+  stroke: var(--primaryColor);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+dropDownMenu[aria-expanded="false"] .dropDownList {
+  transform: translate(-35%, 1%) scale(1);
+  opacity: 1;
+}
+
+.callActionBtns {
+  display: flex;
+  gap: 2em;
+  height: 200px;
+  padding: 2em;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "dark-engines-library",
+  "version": "1.0.0",
+  "description": "Online IT library for developers and CS Students  ",
+  "main": "index.html",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/John11Dark/DarkEnginesLibrary.git"
+  },
+  "keywords": [
+    "Online",
+    "library",
+    "Dev",
+    "library",
+    "IT",
+    "library"
+  ],
+  "author": "John Muller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/John11Dark/DarkEnginesLibrary/issues"
+  },
+  "homepage": "https://github.com/John11Dark/DarkEnginesLibrary#readme"
+}

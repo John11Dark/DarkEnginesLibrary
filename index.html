@@ -79,6 +79,7 @@
         <div class="line LineNumTwo"></div>
         <div class="line LineNumThree"></div>
       </section>
+
       <nav class="mainNav"  aria-expanded="false" indexPage="true">
 
         <ul class="linksList">
@@ -112,16 +113,19 @@
               >About</a
             >
           </li>
+          <li>
+            <svg class="ModeIcon DarkMode">
+              <use xlink:href="#DARK-MODE-ICON"></use>
+            </svg>
+          </li>
         </ul>
       </nav>
 
-      <svg class="ModeIcon DarkMode">
-        <use xlink:href="#DARK-MODE-ICON"></use>
-      </svg>
     </header>
 
     <!-- main content  -->
     <main id="mainContent" class="mainContent">
+
 
          <article class="articleArea">
 
@@ -175,8 +179,15 @@
 
       </section>
 
+      <dialog class="loginDialog">
+        <form action="">
+          <input type="image" class="avatarUpload">
+          <input type="text" name="userName" id="userName" placeholder="please input your name">
+        </form>
+      </dialog>
     </main>
     
+
     <!-- wrap all lists and SVGs content in global data section -->
     
     <section class="globalData">

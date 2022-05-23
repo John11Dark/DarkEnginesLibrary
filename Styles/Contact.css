@@ -1,0 +1,250 @@
+/* content page properties 
+
+all content are warped inside the footer
+i am saying important here 
+so it takes a higher operator than the one in style.css
+you can refer to style.css for body setup 
+
+*/
+
+header {
+  justify-content: space-around !important;
+}
+
+footer {
+  grid-template-columns: 35% 50% !important;
+  grid-template-rows: 55% 45%;
+  overflow: hidden;
+  min-height: 120vh;
+  margin-top: 1em !important;
+}
+
+/* footer's hero section */
+.heroSectionImage.Footer {
+  grid-column: 1 / span 2 !important;
+  grid-row: 1 !important;
+}
+.heroSectionTitle.Footer {
+  top: 2.5em;
+  left: 0.25em;
+}
+/* the inner footer that controls the Form and logo  */
+.innerFooter {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  background-color: var(--customBackgroundColorDarkMode);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  padding: 1em 2em 2em;
+  position: relative;
+}
+.divider {
+  position: relative;
+  width: 40%;
+  height: 80%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerLogo {
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%;
+  height: 90%;
+}
+
+.socialLinksAside {
+  display: flex !important;
+  gap: 2.5rem;
+  height: unset !important;
+  width: 100% !important;
+  transform: translateX(-20%) !important;
+}
+.socialIconsSVGs {
+  max-width: 35px !important;
+  max-height: 35px !important;
+  transform: scale(1) rotate(0deg) !important;
+  fill: var(--primaryColorLight);
+}
+
+.socialIconsSVGs:hover {
+  transform: scale(1.3) !important;
+}
+.contactForm {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-template-rows: 1fr 1fr 2fr;
+  gap: 0.75rem 2.5%;
+  width: max(40%, 40vw);
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  transform: translate(10%, 2.5%);
+  padding: 0.5rem;
+  height: 85%;
+}
+
+.FieldBox {
+  display: grid;
+  align-items: center;
+  gap: 0.4rem 0;
+  width: 100%;
+  height: 100%;
+}
+
+.userName {
+  grid-row: 1;
+  grid-column: 2;
+}
+.phoneNumber {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.emailAddress {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+.textAreaBox {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+}
+
+.FormLabel {
+  font-size: calc(var(--subTitleFontSize) + 0.1vw);
+  color: var(--primaryColor);
+}
+
+.inputField {
+  width: 100%;
+  padding: 1em;
+  font-size: var(--paragraphFontSize);
+  border-radius: var(--cardBorderRadius);
+  box-shadow: var(--boxShadowLightBehind);
+  background-color: var(--backgroundColor);
+  color: var(--labelColor);
+}
+
+.inputField::placeholder {
+  color: var(--labelColor);
+}
+.inputField::-webkit-scrollbar {
+  display: none;
+}
+
+.MobNumField {
+  padding: 1em 1em 1em 35%;
+}
+.phoneNumberDropDown {
+  position: relative;
+  border-radius: var(--cardBorderRadius);
+  overflow: hidden;
+}
+.countriesCodeList {
+  border-radius: var(--cardBorderRadius);
+  cursor: pointer;
+  appearance: none;
+  background-color: var(--primaryCardColor);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  width: 32%;
+  text-align: left;
+  color: var(--primaryColor);
+  font-size: calc(-0.2vw + var(--paragraphFontSize));
+  font-weight: 600;
+  padding: 0 0 0 1rem;
+}
+.countriesCodeList::placeholder {
+  color: var(--primaryColor);
+}
+
+.BodyMessage {
+  height: 100%;
+  font-size: larger;
+  line-height: 1.8;
+  overflow: scroll !important;
+}
+.submitBtn {
+  position: absolute;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 0.5rem;
+  cursor: pointer;
+  right: 2rem;
+  bottom: 1.5rem;
+}
+
+.sendMessageIcon {
+  max-width: 100%;
+  max-height: 100%;
+  transition: var(--transition-5ms-Ease);
+  fill: var(--backgroundColor);
+}
+.submitBtn:hover > .plane {
+  fill: var(--primaryColor);
+}
+/* desktop or 19 inch laptop */
+
+@media only screen and (max-width: 1600px) {
+}
+
+/* laptop screen size larger than 1200 px*/
+@media only screen and (max-width: 1500px) {
+  footer {
+    margin: 0;
+    min-height: 150vh;
+  }
+  .floorShape {
+    transform: scale(1.45) translate(0%, 2%);
+    height: calc(7rem + 5%);
+  }
+  .contactForm {
+    width: 55%;
+    height: 80%;
+    transform: translate(0, 2.5%);
+  }
+  .divider {
+    width: 40%;
+    height: 70%;
+    transform: translate(5%, 5%);
+  }
+  .socialLinksAside {
+    transform: translateY(-10%);
+  }
+  .socialIconsSVGs {
+    max-width: 25px !important;
+    max-height: 25px !important;
+  }
+  .submitBtn {
+    bottom: -0.5rem;
+  }
+}
+
+/* normal laptop screen */
+@media only screen and (max-width: 1200px) {
+  .contactForm {
+    width: 55%;
+    height: 80%;
+    transform: translate(0, 2.5%);
+  }
+  .divider {
+    width: 40%;
+    height: 70%;
+    transform: translate(5%, 5%);
+  }
+  .socialIconsSVGs {
+    max-width: 25px !important;
+    max-height: 25px !important;
+  }
+}

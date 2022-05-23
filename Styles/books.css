@@ -1,0 +1,256 @@
+/* search result title  */
+.searchResult {
+  width: 100%;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 5% 10% 60% 20% 5%;
+  align-items: center;
+  justify-content: left;
+  padding: 0 2em;
+  transform: translateY(10%);
+  /*   position: -webkit-sticky;
+  position: sticky;
+  overflow: hidden;
+  top: 10vh; 
+  z-index: 1000;
+  background-color: var(--backgroundColor); */
+}
+
+.searchResultIcon {
+  grid-column: 2;
+  fill: var(--tertiaryColor);
+  max-width: 90%;
+  max-height: 70%;
+}
+.searchResultTitle {
+  grid-column: 3;
+  font-size: calc(var(--heroSectionTitle) - 35%);
+  letter-spacing: 3px;
+  line-height: 1.6;
+  width: 110%;
+}
+.searchResultTitle{
+  text-transform: capitalize;
+}
+.Query {
+  text-transform: capitalize;
+}
+
+.searchResultImage {
+  grid-column: 4;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* books */
+.books {
+  /* books Container  */
+  display: grid;
+  width: 95%;
+  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(25em, 1fr));
+  margin: 2em 0;
+  padding: 0.5em 3em;
+  gap: 2rem 1rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.bookCard {
+  display: grid;
+  grid-template-rows: 60% 40%;
+  width: 95%;
+  height: 27.5em;
+  border-radius: var(--imageBorderRadius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--boxShadowLightBehind);
+  background-color: var(--primaryColor);
+  background-color: var(--primaryColorDark);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: unset;
+  background-blend-mode: soft-light;
+}
+
+.frontCover {
+  grid-row: 1;
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 5em var(--primaryColor));
+}
+
+.aboutBook {
+  grid-row: 2;
+  background-color: var(--primaryColor);
+  max-width: 100%;
+  height: 100%;
+  padding: 0.25em 1em;
+  cursor: auto;
+  position: relative;
+  box-shadow: 0 -10px 8em 2em #06226e86;
+}
+
+.bookTitle {
+  font-size: var(--subTitleFontSize);
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  max-height: 3rem;
+  overflow: hidden;
+
+}
+.bookTitle::-webkit-scrollbar {
+  display: none;
+}
+
+.bookSubtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5em;
+  left: 0;
+  width: 35%;
+  height: 0.4rem;
+  border-radius: 1rem;
+  background-color: var(--primaryColorLight);
+  
+}
+
+.bookSubtitle {
+  position: relative;
+  color: var(--primaryColorLight);
+    max-height: 80%;
+    overflow: scroll;
+}
+.bookSubtitle::-webkit-scrollbar{
+display: none;
+}
+
+ul.aboutBookList {
+  display: contents;
+}
+
+.aboutBookNav {
+  display: grid;
+  justify-content: left;
+  align-items: center;
+  align-content: center;
+  width: 90%;
+  grid-template-columns: 45% 12.5% 12.5% 12.5% 12.5%;
+  gap: 0 1%;
+  position: absolute;
+  bottom: 0;
+}
+
+.Price {
+  grid-column: 1;
+  font-size: calc(0.5rem + 0.1vw + 0.1vh + 50%);
+  font-weight: bolder;
+  width: 100%;
+  color: var(--primaryColorLight);
+
+}
+
+.bookIcon {
+  max-width: max(30px, 80%);
+  max-height: 35px;
+  cursor: pointer;
+  fill: var(--tertiaryColor);
+  transform: scale(0.8) translate(50%, 10%);
+  overflow: hidden;
+  transform-origin: bottom center;
+  transition: var(--transition-5ms-Ease);
+}
+
+.bookIcon:hover {
+  transform: scale(0.95) translate(50%, 10%);
+}
+.aboutBookItem {
+  position: relative;
+}
+
+.aboutBookItem:not(.Price, .Favorite, .Cart, .Link)::after {
+  content: attr(var(--itemAttribute));
+  position: absolute;
+  left: -90%;
+  top: -100%;
+  width: max-content;
+  padding: 0.6em 1em 0 1em;
+  font-size: var(--paragraphFontSize);
+  height: 100%;
+  background-color: var(--primaryCardColor);
+  color: var(--tertiaryColor);
+  border-radius: var(--cardBorderRadius);
+  display: none;
+}
+
+.aboutBookItem:hover::after {
+  display: block;
+}
+
+.Link:not(.linkDirectory) {
+  grid-column: 2;
+}
+
+.Link:hover {
+  --itemAttribute: title;
+}
+
+.Link .bookIcon {
+  fill: #0b0c42;
+}
+
+.ISBN {
+  --itemAttribute: ISBN;
+  grid-column: 3;
+}
+
+.ISBN .bookIcon {
+  fill: var(--primaryColorDark);
+}
+
+.Favorite {
+  --itemAttribute: status;
+  grid-column: 4;
+}
+
+.Favorite .bookIcon {
+  --fillColor: #e7a310;
+  fill: rgba(255, 255, 255, 0.014);
+  stroke-width: 50px;
+  stroke: var(--fillColor);
+  transition: all 0.5s ease-in-out;
+}
+
+.Favorite[isFavorite="true"] .bookIcon {
+  stroke-width: 10px;
+  fill: var(--fillColor);
+}
+
+.Favorite:hover .bookIcon {
+  stroke-width: 10px;
+  fill: var(--fillColor);
+}
+
+.Cart {
+  --itemAttribute: status;
+  grid-column: 5;
+  transform: scale(1.2);
+}
+.hide {
+  display: none;
+}
+
+
+
+.svgIcon{
+max-width: 25px;
+max-height: 25px;
+
+}

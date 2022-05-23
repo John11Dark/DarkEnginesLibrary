@@ -1,4 +1,40 @@
 /* global variables */
+@media (prefers-color-scheme: dark) {
+  /* redefine dark mode colors here */
+  :root {
+    --primaryColor: #62bde7;
+    --primaryColorDark: #181414;
+    --primaryColorLight: #fffeff;
+    --secondaryColor: #707070;
+    --tertiaryColor: #ff424d;
+    --CustomTertiaryColor: #b5d4b9;
+    --DarkModeOpacity: #0a0a0ae3;
+    --backgroundColor: #1d2325;
+    --customBackgroundColorDarkMode: #488d9f;
+    --backgroundColorOpacity: #1d2325b0;
+    --primaryCardColor: #23282ea2;
+    --labelColor: #aaa9b6;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  /* redefine dark mode colors here */
+  :root {
+    --primaryColor: #62bde7;
+    --primaryColorDark: #fffeff;
+    --primaryColorLight: #181414;
+    --secondaryColor: #707070;
+    --tertiaryColor: #ff424d;
+    --CustomTertiaryColor: #b5d4b9;
+    --DarkModeOpacity: #0a0a0ae3;
+    --backgroundColor: #d9e9f1;
+    --customBackgroundColorDarkMode: #cbd9df;
+    --backgroundColorOpacity: #1d2325b0;
+    --primaryCardColor: #e2efffa2;
+    --labelColor: #978f8f;
+  }
+}
+
 :root {
   /* Fonts */
   --primaryFont: "Poppins", sans-serif;
@@ -7,17 +43,17 @@
   --tertiaryFontExtra: "Akaya Kanadaka", cursive;
 
   /* Colors */
-  --primaryColor: #9ddcfa;
+  /* --primaryColor: #62bde7;
   --primaryColorDark: #181414;
   --primaryColorLight: #fffeff;
   --secondaryColor: #707070;
-  --TertiaryColor: #ff424d;
-  --TertiaryColor2: #b5d4b9;
+  --tertiaryColor: #ff424d;
+  --CustomTertiaryColor: #b5d4b9;
   --DarkModeOpacity: #0a0a0ae3;
   --backgroundColor: #1d2325;
+  --customBackgroundColorDarkMode: #488d9f;
   --backgroundColorOpacity: #1d2325b0;
-  --primaryCardColor: #272c33a2;
-  --primaryCardColorLighter: #22272e60;
+  --primaryCardColor: #23282ea2; */
 
   /* box shadows */
   --boxShadowLightBehind: 0 0 2em -1em var(--DarkModeOpacity);
@@ -30,8 +66,11 @@
 
   /* Sizes */
   --cardBorderRadius: 0.5rem;
+  --largeCardBorderRadius: 0.75rem;
   --btnBorderRadius: 0.25rem;
-
+  --searchBarBorderRadius: calc(1rem + 0.25vw + 0.25vh);
+  --imageMaxWidth: calc(30vw + 20vh + 10% + 2.5rem);
+  --imageMaxHeight: calc(30vh + 20vw + 10% + 2.5rem);
   --imageBorderRadius: calc(0.5rem + var(--cardBorderRadius));
   --cardBorderRadiusThin: 0.25rem;
   --inputBorderRadius: 0.75rem;
@@ -39,11 +78,13 @@
   --navScale: 40%;
   --btnFontSize: calc(1rem + 20% + 0.5vw + 0.5vh);
   --navFontSize: calc(0.1rem + 30% + 0.5vw + 0.5vh);
-  --ParagraphFontSize: 25px;
+  --paragraphFontSize: calc(0.25rem + 0.25vw + 0.5vh + 25%);
   --HeadFontSize: calc(1em + 0.5vh + 0.5vw);
-  --headTitleFontSize: calc(90% + 0.6vh + 0.6vw + 0.6rem);
-  --subTitleFontSize: calc(70% + 0.5vh + 0.5vw + 0.25rem);
-  --titleFontSize: calc(70% + 0.5vh + 0.5vw + 0.5rem);
+  --heroSectionTitle: calc(1.5rem + 1vw + 1vh + 25%);
+  --headTitleFontSize: calc(90% + 0.75vh + 0.75vw + 0.75rem);
+  --headTitleFontSizeLarger: calc(90% + 1vh + 1vw + 1rem);
+  --subTitleFontSize: calc(50% + 0.25vh + 0.25vw + 0.25rem);
+  --titleFontSize: calc(25% + 0.5vh + 0.5vw + 0.5rem);
   --calcFontSize: calc(80% + 0.5vh + 0.5vw);
   --dateFontSize: calc(1.2rem + 12%);
 }
@@ -66,6 +107,7 @@
   margin: 0;
   padding: 0;
   word-wrap: break-word;
+  border: none;
 }
 
 /* document and body styling  */
@@ -84,18 +126,25 @@ body {
 /* body styling  */
 body {
   position: relative;
-  max-width: 100vw;
-  line-height: 2em;
+  max-width: 99vw;
+  min-height: 100vh;
+  line-height: 1.5em;
   word-spacing: 1px;
-  overflow-x: hidden;
-  display: -ms-grid;
+  /* 
+   The !important it ensures that the body has same properties 
+   across all pages 
+   */
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
   display: grid;
-  grid-template-columns: 2.5% 95% 2.5%; /* not supported by internet explorer and it's a way to complicated to support it */
+  place-self: center;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: 100%;
   justify-content: center;
-  align-items: center;
   background: var(--backgroundColor);
-  font-family: var(--primaryFont);
   background-attachment: fixed;
+  font-family: var(--primaryFont);
 }
 
 /* 
@@ -109,7 +158,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--primaryColor);
-  border: var(--primaryColorDark) 2px solid;
+  border: var(--backgroundColor) 2px solid;
   border-radius: 5em;
 }
 
@@ -121,12 +170,6 @@ body {
 /* list styling */
 ul {
   list-style: none;
-}
-
-ul.linksList {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 ul.linksList {
@@ -144,13 +187,13 @@ h3,
 h4 {
   margin: 0 0 0.25em 0;
   font-weight: 600;
-  font-size: var(--titleFontSize);
-  color: var(--primaryColor);
+  font-size: var(--TitleFontSize);
+  color: var(--primaryColorLight);
   line-height: 2em;
 }
 
 p {
-  font-size: var(--ParagraphFontSize);
+  font-size: var(--paragraphFontSize);
   font-family: var(--secondaryFont);
   line-height: 1.5em;
   font-weight: 100;
@@ -166,7 +209,7 @@ a {
 }
 
 a[isCurrentPage="true"] {
-  color: var(--TertiaryColor);
+  color: var(--tertiaryColor);
   transform: scale(1.15);
   font-weight: 900;
 }
@@ -212,10 +255,16 @@ a.button > .btnSvgIcon {
 .PrimaryBtn > .btnSvgIcon {
   fill: var(--_primaryBtnColor);
 }
+.primaryColor {
+  color: var(--primaryColor);
+}
 
+.secondaryColor {
+  color: var(--tertiaryColor);
+}
 /* secondary button */
 .SecondaryBtn {
-  --_secondaryBtnColor: var(--TertiaryColor);
+  --_secondaryBtnColor: var(--tertiaryColor);
   --_borderDistance: -0.1rem;
   background-color: transparent;
   color: var(--_secondaryBtnColor);
@@ -296,6 +345,77 @@ img {
   transition: all 0.5s ease-in;
 }
 
+/* custom alert */
+.notificationCenter {
+  min-height: 10vh;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 150px);
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+  width: 30vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  transition: all 0.5s ease-in-out;
+  transform: translate(100%);
+}
+
+.customAlert {
+  position: relative;
+  margin: 0.2rem 0;
+  padding: 1.5em 2em;
+  display: grid;
+  gap: 0.5em 0;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryCardColor);
+  color: var(--primaryColorLight);
+  border-radius: var(--cardBorderRadius);
+  animation: slideUp 0.5s ease-in both;
+  z-index: 999999;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+  max-width: 15px;
+  max-height: 15px;
+  fill: var(--secondaryColor);
+  cursor: pointer;
+  transition: var(--transition-5ms-Ease);
+}
+.closeBtn:hover {
+  fill: var(--tertiaryColor);
+  transform: scale(1.1);
+}
+
+.customAlertLink {
+  position: relative;
+  font-size: var(--paragraphFontSize);
+  color: var(--tertiaryColor);
+  font-weight: 900;
+  font-family: var(--secondaryFont);
+  transform-origin: left center;
+  transition: var(--transition-5ms-Ease);
+}
+
+.customAlertLink[notVisible="false"]::after {
+  content: "→";
+  transform: scale(1.5);
+  margin-left: 0.2em;
+}
+
+.customAlertLink:hover {
+  transform: scale(1.1);
+  color: var(--primaryColor);
+}
+
+.customAlertLink[notVisible="true"]::after {
+  display: none;
+}
 /* 
   *
   *
@@ -314,12 +434,17 @@ header {
   align-items: center;
   justify-content: space-around;
   z-index: 9999;
-  gap: 10%;
-  background: var(--backgroundColorOpacity);
+  background: var(--backgroundColor);
 }
 
 header[isInteracting="true"] {
   height: 10vh;
+}
+
+header[searchBar="true"]{
+  justify-content: center;
+  gap: 10%;
+
 }
 
 /* Logo */
@@ -333,13 +458,67 @@ header[isInteracting="true"] {
   transform: scale(0.9);
   transition: var(--transition-5ms-Ease);
 }
+
 .logoParent:hover {
   transform: scale(1);
 }
+
 .mainLogo {
-  width: 100;
-  height: 100;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+/* search bar */
+.searchBar {
+  width: 15%;
+  height: 50%;
+  border-radius: var(--searchBarBorderRadius);
+  overflow: hidden;
+  position: relative;
+  background-color: transparent;
+}
+
+.searchBarInput {
+  width: 100%;
+  height: 100%;
+  padding: 0.1rem 1rem;
+  font-size: var(--navFontSize);
+  background-color: var(--primaryCardColor);
+}
+
+.searchSubmitButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  background-color: var(--tertiaryColor);
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.searchBarIcon {
+  width: min(30px, 80%);
+  height: min(30px, 60%);
+  padding: 0.1rem;
+  fill: var(--backgroundColor);
+}
+
+.searchBar[isIntersecting="false"] {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 50vw;
+  height: 8vh;
+  box-shadow: 0 0 5em 0.1rem var(--primaryColorDark);
+}
+
+.searchBar[isIntersecting="false"] .searchSubmitButton {
+  width: 10%;
 }
 
 /* navigation bar */
@@ -359,7 +538,7 @@ header[isInteracting="true"] {
 }
 .pageLink:hover {
   transform: scale(1.15);
-  color: var(--TertiaryColor);
+  color: var(--tertiaryColor);
   font-weight: bolder;
 }
 
@@ -369,11 +548,10 @@ dropDownMenu {
 }
 
 .userAvatar {
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 70px;
+  transform: translateY(10%);
   border-radius: 50%;
-  background-color: var(--primaryColor);
-  border: 4px solid var(--primaryColor);
   cursor: pointer;
 }
 
@@ -399,7 +577,6 @@ dropDownMenu {
 
 .dropDownList {
   position: absolute;
-  display: -ms-grid;
   display: grid;
   background-color: var(--primaryCardColor);
   top: 100%;
@@ -416,39 +593,406 @@ dropDownMenu {
   opacity: 0;
   transition: var(--transition-5ms-Ease);
 }
+
 .dropDownLinkParent {
-  width: 110%;
+  width: 110% !important;
 }
+
 .dropDownLink {
   display: flex;
   align-items: center;
   gap: 10%;
   align-content: center;
   width: 100%;
+  color: var(--primaryColorLight) !important;
 }
-#itemsInCartValue {
-  color: #ff424d;
-  fill: #fffeff;
-}
+
 .dropDownSvgIcon {
   max-width: 25px;
   max-height: 25px;
   fill: var(--primaryColor);
 }
+
 .Mode {
   stroke: var(--primaryColor);
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-dropDownMenu[aria-expanded="false"] .dropDownList {
+
+.SwitchModes {
+  cursor: pointer;
+}
+
+dropDownMenu[aria-expanded="true"] .dropDownList {
   transform: translate(-35%, 1%) scale(1);
   opacity: 1;
 }
 
-.callActionBtns {
+/* main content */
+
+
+/* hero Section */
+.backgroundEffect {
+  position: fixed;
+  top: 8vh;
+  left: 0;
+  width: max(100%, 100vw);
+  height: 90vh;
+  font-size: calc(5rem + 100% + 10vw + 12.5vh);
+  line-height: 1;
+  letter-spacing: 5px;
+  z-index: -1000;
+  color: var(--primaryColorLight);
+  opacity: 0.05;
+}
+
+.heroSection {
+  height: 100vh;
+  display: grid;
+  position: relative;
+  margin-bottom: 2em;
+}
+
+.heroSectionImage {
+  object-fit: contain;
+  /* setting the image point event's to none because it's over the title 
+  but it's not shown because of object fit makes white space around it to make sure 
+  that all image are shown   */
+  pointer-events: none;
+}
+.heroSectionImage.Head {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroSectionTitle {
+  text-align: left;
+  z-index: 2;
+  letter-spacing: 2px;
+}
+
+.articleArea {
+  width: 70%;
+  max-height: 100%;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  text-align: left;
+  gap: 0.5rem 0;
+  transform: translate(5%,-5%);
+}
+
+.galleryHeroSectionTitle {
+  font-size: calc(var(--heroSectionTitle) + 10%);
+  line-height: 1.5;
+  position: relative;
+}
+
+.galleryHeroSectionTitle::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: -1.4rem;
+  height: 80%;
+  width: 7.5px;
+  border-radius: 2.5rem;
+  background-color: var(--tertiaryColor);
+}
+
+.descriptionParagraph {
+  font-size: var(--calcFontSize);
+  color: var(--labelColor);
+}
+
+.heroSectionTitle.Head {
+  font-size: calc(var(--heroSectionTitle) + 2rem);
+  line-height: 1.2;
+  position: absolute;
+  top: 20%;
+  left: 2%;
+}
+
+
+/* books continuer */
+
+main{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  padding: 1em;
+}
+.mainContent{
+  padding: 0 0.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.subContent{
+ display: grid;
+ place-items: center;
+ place-content: center;
+ place-self: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 10% 10% 20% 10% 40% 10%;
+  grid-template-rows: 60% 30% 10%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 5em;
+}
+
+.heroSection.Footer {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+  display: grid;
+  place-self: center;
+  place-items: center;
+  place-content: center;
+}
+
+.upperSideHeroSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  place-self: center;
+  padding: 0em 2em;
+  gap: 2rem;
+}
+
+.heroSectionImage.Footer {
+  max-height: var(--imageMaxHeight);
+  max-width: var(--imageMaxWidth);
+  position: absolute;
+  right: 2em;
+  bottom: 1em;
+  z-index: 2;
+}
+
+.heroSectionTitle.Footer {
+  font-size: calc(var(--heroSectionTitle));
+  line-height: 1.3;
+  position: absolute;
+  top: 1em;
+  left: 2em;
+}
+
+.floorShape {
+  width: 100vw;
+  fill: var(--primaryColor) !important;
+  transform: scale(1.5) translate(0%, 0%);
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+}
+
+/* bottom footer */
+.backgroundColor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--customBackgroundColorDarkMode);
+  z-index: -10;
+}
+
+.footerLogo {
+  -ms-grid-column: 2 / span 3;
+  grid-column: 2 / span 3;
+  -ms-grid-row: 2;
+  grid-row: 2 / span 3;
+  height: 55%;
+  width: 100%;
+  object-fit: contain;
+  transform: translate(-10%, -10%);
+}
+
+.callActionButtons {
+  -ms-grid-column: 5;
+  grid-column: 5;
+  -ms-grid-row: 2;
+  grid-row: 2;
   display: flex;
   gap: 2em;
-  height: 200px;
   padding: 2em;
+  transform: translate(10%, 40%);
+}
+
+.plane {
+  transition: transform 0.5s ease-in-out;
+}
+
+.PrimaryBtn:hover > .plane {
+  transform: translate(10%, -20%);
+}
+
+.socialLinksAside {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  width: max(5vw, 5%);
+  height: 120%;
+  transform: translateY(15%);
+  display: grid;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.socialIconsSVGs {
+  fill: var(--primaryColor);
+  max-width: 25px;
+  max-height: 25px;
+  transform: scale(1) rotate(-90deg);
+  transition: var(--transition-5ms-Ease);
+}
+
+.socialIconsSVGs:hover {
+  transform: scale(1.3) rotate(0deg);
+  fill: var(--tertiaryColor);
+}
+
+.copyRight {
+  -ms-grid-column: 1 / span 5;
+  grid-column: 1 / span 5;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  margin-top: 2.5em;
+  font-size: var(--paragraphFontSize);
+  color: var(--primaryColorLight);
+}
+
+.author {
+  font-size: calc(var(--paragraphFontSize) + 0.25rem);
+  font-weight: bolder;
+  color: var(--primaryColor);
+  position: relative;
+}
+
+.author::after {
+  content: attr(authorName);
+  position: absolute;
+  width: 150px;
+  padding: 0.5rem 0;
+  left: -115%;
+  top: -160%;
+  font-size: 1rem;
+  background-color: var(--primaryColor);
+  color: var(--primaryColorLight);
+  border-radius: var(--cardBorderRadius);
+  transform: translateY(100%) scale(0);
+  opacity: 0;
+  transition: var(--transition-5ms-Ease);
+  font-family: var(--tertiaryFontExtra);
+}
+
+.author:hover::after {
+  transform: translateY(0%) scale(1);
+  opacity: 1;
+}
+
+/* 
+ the above code is for 4k screens or screens that is larger than 1620
+ i did not start from a mobile view because all my code is a flued design and i am setting a break point 
+ where an object run out of space issues 
+ */
+
+@media only screen and (min-width: 1700px) {
+  .floorShape {
+    transform: translate(15%, 10%) scale(1.6) !important;
+  }
+}
+
+/* laptop screen size */
+@media only screen and (max-width: 1400px) {
+  /*   .floorShape {
+    transform: scale(1.15) translate(-5%, 17.5%);
+  } */
+  .heroSectionTitle {
+    font-size: calc(var(--heroSectionTitle) + 0.75rem);
+  }
+}
+/* @supports selector() {
+
+}
+@when supports(selector()) {
+
+} @else {
+
+} 
+
+ul.linksList, ul.aboutBookList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+*/
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%) translateY(-10%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translate(-100, -20%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(200%, -20%);
+  }
+}
+
+use {
+  pointer-events: none;
+}
+.globalData {
+  position: absolute;
+  transform: translate(-25555555555555%, -2555555555555%);
 }

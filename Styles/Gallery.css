@@ -1,0 +1,164 @@
+.galleryHeroSection {
+  min-height: 100vh;
+  width: max(100%, 99vw);
+  display: grid;
+  place-self: center;
+  place-items: center;
+  place-content: center;
+  grid-template-rows: 40% 60%;
+  margin-top: 2em;
+}
+
+.UpperPart {
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  place-self: center;
+  transform: translateY(15%);
+}
+
+.articleArea {
+  width: 70%;
+  max-height: 100%;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: left;
+  text-align: left;
+  gap: 0.5rem 0;
+}
+
+.galleryHeroSectionTitle {
+  font-size: calc(var(--heroSectionTitle) + 10%);
+  line-height: 1.5;
+  position: relative;
+}
+
+.galleryHeroSectionTitle::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: -1.4rem;
+  height: 80%;
+  width: 7.5px;
+  border-radius: 2.5rem;
+  background-color: var(--tertiaryColor);
+}
+
+.descriptionParagraph {
+  font-size: var(--calcFontSize);
+  color: var(--labelColor);
+}
+
+.expandButton {
+  background-color: var(--primaryColor);
+  max-height: 70px;
+  max-width: 70px;
+  cursor: pointer;
+  fill: var(--tertiaryColor);
+  overflow: hidden;
+  transform: scale(2.2);
+  border-radius: var(--cardBorderRadius);
+  cursor: pointer;
+  transition: var(--transition-5ms-Ease);
+}
+
+.expandButton:hover {
+  transform: scale(2.3);
+  fill: var(--primaryColor);
+  background-color: var(--tertiaryColor);
+}
+
+.BottomPart {
+  grid-row: 2;
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 28em;
+  column-gap: 1em;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+}
+/* set custom property (variable) border color for each topic with their initial customization ID  */
+.topic[topicCustomizationInitialID="Primary"] .imageContainer {
+  --_borderColor: var(--primaryColor);
+}
+.topic[topicCustomizationInitialID="Secondary"] .imageContainer {
+  --_borderColor: var(--secondaryColor);
+}
+.topic[topicCustomizationInitialID="Tertiary"] .imageContainer {
+  --_borderColor: var(--tertiaryColor);
+}
+.topic[topicCustomizationInitialID="Extra"] .imageContainer {
+  --_borderColor: var(--primaryColorLight);
+}
+.dummyCard {
+  object-fit: scale-down;
+  max-width: 100%;
+  max-height: 100%;
+  /* 'aspect-ratio' is not supported by Safari < 15, Safari on iOS < 15  so it will cause the image to stretch a bit*/
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transform: scale(0.95);
+  transition: var(--transition-5ms-Ease);
+  position: relative;
+}
+.dummyCard:hover,
+.imageContainer:hover {
+  --_gapBlock: 0rem;
+  --_gapInLine: -0.75rem;
+  transform: scale(1);
+  background-color: var(--primaryCardColor);
+  border-radius: var(--largeCardBorderRadius);
+}
+.imageContainer {
+  --_gapBlock: 2rem;
+  --_gapInLine: 0.5rem;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  max-height: 90%;
+  transition: var(--transition-5ms-Ease);
+}
+.imageContainer::after,
+.imageContainer::before {
+  content: "";
+  position: absolute;
+  top: var(--_gapBlock);
+  left: var(--_gapInLine);
+  z-index: -1;
+  width: 25%;
+  height: 25%;
+  border: 5px solid var(--_borderColor);
+  border-right: none;
+  border-bottom: none;
+  border-radius: var(--cardBorderRadius);
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  transition: var(--transition-5ms-Ease);
+  z-index: 2;
+}
+
+.imageContainer::before {
+  border: 5px solid var(--_borderColor);
+  border-top: 0;
+  border-left: 0;
+  bottom: var(--_gapBlock);
+  right: var(--_gapInLine);
+  left: unset;
+  top: unset;
+}
+
+.aboutTopic {
+  visibility: visible !important;
+  display: grid ;
+  min-height: 100vh;
+  width: 100;
+}

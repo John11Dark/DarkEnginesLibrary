@@ -1,0 +1,105 @@
+[
+  {
+    "topicCustomizationInitialID": "Primary",
+    "topicInitialID": 1,
+    "topicTitle": "Web Development",
+    "shortDescription": "learn web development Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "mainDescription": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ut ex nulla nisi cupiditate. Quae praesentium nihil optio et excepturi architecto non sequi voluptates dolor!",
+    "coverPath": "/Assets/galleryPageAssets/webDevelopment.png",
+    "alternativeText": "unset",
+    "framePath": "/Assets/galleryPageAssets/webDevelopmentFrame.png",
+    "Topics": [
+      {
+        "name": "topicOne",
+        "topicID": 1,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      },
+      {
+        "name": "topicTwo",
+        "topicID": 2,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      }
+    ],
+    "query": "https://api.itbook.store/1.0/search/"
+  },
+
+  {
+    "topicCustomizationInitialID": "Secondary",
+    "topicInitialID": 2,
+    "topicTitle": "UI UX design ",
+    "shortDescription": "learn web development Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "mainDescription": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ut ex nulla nisi cupiditate. Quae praesentium nihil optio et excepturi architecto non sequi voluptates dolor!",
+    "coverPath": "/Assets/galleryPageAssets/UI-UIX-Design.png",
+    "framePath": "/Assets/galleryPageAssets/webDevelopmentFrame.png",
+    "alternativeText": "unset",
+    "Topics": [
+      {
+        "name": "topicOne",
+        "topicID": 1,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      },
+      {
+        "name": "topicTwo",
+        "topicID": 2,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      }
+    ],
+    "query": ""
+  },
+
+  {
+    "topicCustomizationInitialID": "Tertiary",
+    "topicInitialID": 3,
+    "topicTitle": "Artificial Intelligence",
+    "shortDescription": "learn web development Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "mainDescription": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ut ex nulla nisi cupiditate. Quae praesentium nihil optio et excepturi architecto non sequi voluptates dolor!",
+    "coverPath": "/Assets/galleryPageAssets/artificial-intelligence.png",
+    "framePath": "/Assets/galleryPageAssets/artificial-intelligenceFrame.png",
+    "alternativeText": "unset",
+    "Topics": [
+        {
+          "name" : "topicOne",
+          "topicID" : 1,
+          "topicHeading": "what is ipsum dolor sit amet",
+          "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+        },
+        {
+          "name": "topicTwo",
+          "topicID": 2,
+          "topicHeading": "what is ipsum dolor sit amet",
+          "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+        }
+    ],
+    "query": ""
+  },
+
+  {
+    "topicCustomizationInitialID": "Extra",
+    "topicInitialID": 4,
+    "topicTitle": "Data Algrothim",
+    "shortDescription": "Data Algrothim is Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+    "mainDescription": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ut ex nulla nisi cupiditate. Quae praesentium nihil optio et excepturi architecto non sequi voluptates dolor!",
+    "coverPath": "/Assets/galleryPageAssets/dataAlgorithms.png",
+    "framePath": "/Assets/galleryPageAssets/dataAlgorithmsFrame.png",
+    "alternativeText": "unset",
+    "Topics": [
+      {
+        "name": "topicOne",
+        "topicID": 1,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      },
+      {
+        "name": "topicTwo",
+        "topicID": 2,
+        "topicHeading": "what is ipsum dolor sit amet",
+        "topicParagraph": "ipsum dolor sit amet consectetur adipisicing elit. Nulla corrupti fuga nam nobis cumque, similique impedit accusantium ratione facere autem, exercitationem cupiditate numquam praesentium repellendus est voluptas fugiat maxime incidunt, iste perspiciatis eligendi ipsam aperiam? Dicta eos est culpa officia nihil eius nulla consequatur dolor autem odio? Ducimus veniam reprehenderit voluptate quibusdam? Doloremque sequi enim qui praesentium quia, error iure reprehenderit, repudiandae inventore, beatae itaque tempore. Deserunt, saepe animi amet tempora sunt ducimus mollitia! Obcaecati iure eos architecto quo consectetur voluptatum culpa facilis itaque id nihil debitis accusantium tempore repellendus deleniti, veritatis minima aperiam voluptatem. A magnam culpa exercitationem iure."
+      }
+    ],
+    "query": ""
+  }
+]

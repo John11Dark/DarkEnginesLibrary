@@ -60,7 +60,7 @@
             />
          </a>
 
-         <nav class="mainNav">
+         <nav class="mainNav" aria-expanded="true" isToggled="true">
             <ul class="linksList">
                <li class="linkParent"><a isCurrentPage="false"  class="pageLink" title="Dark Engines Library Home page"    href="/Pages/home.html" class="pageLink">Home</a></li>
                <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Books page"   href="/Pages/Books.html" class="pageLink">Books</a></li>
@@ -68,7 +68,7 @@
                <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Contact page" href="/Pages/Contact.html" class="pageLink">Contact</a></li>
                <li class="linkParent"><a isCurrentPage="true" class="pageLink" title="Dark Engines Library About page"   href="/Pages/About.html" class="pageLink">About</a></li>
             </ul>
-            <dropDownMenu aria-expanded="false" class="dropDown">
+            <dropDownMenu aria-expanded="true" class="dropDown">
                <img class="userAvatar" src="/Assets/userAvatar.webp" alt="User avatar">
                <ul class="dropDownList">
                   <li class="dropDownLinkParent" id="userName" userName="User Name"></li>
@@ -80,12 +80,7 @@
                         Account
                      </a>
                   </li>
-                  <li title="switch to Light Mode" class="dropDownLinkParent SwitchModes" currentMode="Dark">
-                       <p class="dropDownLink"> <svg  class="dropDownSvgIcon Mode" >
-                           <use xlink:href="#LIGHT-MODE-ICON"></use>
-                        </svg>
-                        Light Mode </p>
-                  </li>
+                  <li >
                   <li class="dropDownLinkParent">
                      <a title="Cart page" href="/Pages/account.html#cart" class="dropDownLink">
                         <svg class="dropDownSvgIcon">
@@ -118,6 +113,14 @@
                         Logout
                      </a>
                   </li>
+                            <li class="SwitchModes" currentMode="Dark">
+            <svg class="themeIcon DarkMode" >
+              <use class="linkX" xlink:href="#DARK-MODE-ICON"></use>
+            </svg>
+            <svg class="themeIcon LightMode">
+              <use xlink:href="#LIGHT-MODE-ICON"></use>
+            </svg>
+          </li>
                </ul>
             </dropDownMenu>
          </nav>
@@ -203,6 +206,53 @@
 
          </section>
       </footer>
+
+      <section class="globalData">
+         
+      <!-- dark Mode icon -->
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol
+          id="DARK-MODE-ICON"
+          viewBox="0 0  512 512"
+          preserveAspectRatio="xMinYMin meet"
+        >
+          <path
+            d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"
+          />
+        </symbol>
+      </svg>
+
+      <!-- Light Mode icon -->
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol
+          id="LIGHT-MODE-ICON"
+          viewBox="0 0 30 30"
+          preserveAspectRatio="xMinYMin meet"
+        >
+          <path
+            d="M22.755,16.627A6.127,6.127,0,1,1,16.627,10.5,6.127,6.127,0,0,1,22.755,16.627Z"
+            transform="translate(-1.972 -3.285)"
+          />
+          <path d="M18,1.5V4.638" transform="translate(-3.894 -1.5)" />
+          <path d="M18,31.5v2.969" transform="translate(-3.894 -6.855)" />
+          <path d="M6.33,6.33,8.7,8.7" transform="translate(-4.056 -3.842)" />
+          <path
+            d="M27.54,27.54l2.633,1.715"
+            transform="translate(-3.966 -4.61)"
+          />
+          <path d="M1.5,18H4.424" transform="translate(-1.5 -4.108)" />
+          <path d="M31.5,18h2.758" transform="translate(-6.211 -4.108)" />
+          <path
+            d="M6.33,29.905,8.7,27.54"
+            transform="translate(-4.056 -4.61)"
+          />
+          <path
+            d="M27.54,8.045,29.255,6.33"
+            transform="translate(-3.966 -3.192)"
+          />
+        </symbol>
+      </svg>
+      </section>
 
    </body>
 </html>

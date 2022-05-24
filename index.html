@@ -113,9 +113,12 @@
               >About</a
             >
           </li>
-          <li>
-            <svg class="ModeIcon DarkMode">
-              <use xlink:href="#DARK-MODE-ICON"></use>
+          <li class="SwitchModes" currentMode="Dark">
+            <svg class="themeIcon DarkMode" >
+              <use class="linkX" xlink:href="#DARK-MODE-ICON"></use>
+            </svg>
+            <svg class="themeIcon LightMode">
+              <use xlink:href="#LIGHT-MODE-ICON"></use>
             </svg>
           </li>
         </ul>
@@ -217,7 +220,7 @@
         </symbol>
       </svg>
 
-      <!-- Light Mode icon -->
+      <!-- dark Mode icon -->
       <svg xmlns="http://www.w3.org/2000/svg">
         <symbol
           id="DARK-MODE-ICON"

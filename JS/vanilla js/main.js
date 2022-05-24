@@ -1,17 +1,60 @@
-// Global variables
-
 // Global functions
-function querySelector(selector, parent = document) {
-  return parent.querySelector(selector);
+
+function copyToClipboard(object, Attribute) {
+  const textContent = object.getAttribute(Attribute);
+  navigator.clipboard.writeText(textContent);
+  customAlert(textContent, "ClipBoard");
 }
 
-function querySelectorAll(selector, parent = document) {
-  return [...parent.querySelectorAll(selector)];
+function removeAlertCard(object, duration = 1500) {
+  object.style = `animation: slideOut 1s ease-out both`;
+  setTimeout(() => {
+    object.remove();
+  }, duration);
+  notifications.shift();
+}
+
+// this is the browsers default alert and the below one i have created
+// alert("Item added ");
+function customAlert(
+  itemName,
+  objectName,
+  requireLink = false,
+  itemRemoved = false
+) {
+  const alertCardParent = document.querySelector(".notificationCenter");
+  const alertCard = document.querySelector(".alertCard").content.cloneNode(true)
+    .children[0];
+  const textLabel = alertCard.querySelector(".text");
+  const link = alertCard.querySelector(".customAlertLink");
+  const alertCloseBtn = alertCard.querySelector(".closeBtn");
+
+  if (requireLink) {
+    link.textContent = `View ${objectName} list`;
+    link.href = `/pages/user#${objectName}`;
+    link.title = `go to list ${objectName} page`;
+  } else {
+    link.setAttribute("notVisible", "true");
+  }
+  if (!itemRemoved) {
+    textLabel.textContent = `${itemName} has been added successfully! \n to ${objectName} list`;
+  } else {
+    textLabel.textContent = `${itemName} has been removed successfully! \n from ${objectName} list`;
+  }
+
+  alertCardParent.appendChild(alertCard);
+  setTimeout(() => {
+    removeAlertCard(alertCard);
+  }, 3000);
+
+  alertCloseBtn.addEventListener("click", (e) => {
+    notificationCard = e.target.parentElement;
+    removeAlertCard(notificationCard);
+  });
 }
 
 // document variables
 const userModePreference = window.matchMedia("(prefers-color-scheme: Dark)");
-
 const header = document.querySelector("header");
 const dropDownMenu = document.querySelector("dropDownMenu");
 const userName = "John Muller";
@@ -21,14 +64,15 @@ const userAvatarURL = "/Assets/userAvatar.png";
 const modeToggle = document.querySelector(".SwitchModes");
 const logo = document.querySelector(".Logo");
 const Logos = document.querySelectorAll(".Logo");
+
+// set user name and avatar
 userNameLabel.forEach((user) => {
   user.setAttribute("userName", userName);
   user.textContent = user.getAttribute("userName");
   userAvatar.src = userAvatarURL;
 });
 
-
-
+// theme mode starts here
 if (userModePreference.matches) {
   Logos.forEach((logo) => {
     //Dark Mode
@@ -40,16 +84,6 @@ if (userModePreference.matches) {
     logo.src = `/Assets/DarkEnginesLibraryLogoDark.png`;
   });
 }
-
-dropDownMenu.addEventListener("click", () => {
-  let isAriaExpanded = dropDownMenu.getAttribute("aria-expanded");
-
-  if (isAriaExpanded === "false") {
-    dropDownMenu.setAttribute("aria-expanded", true);
-  } else if (isAriaExpanded === "true") {
-    dropDownMenu.setAttribute("aria-expanded", false);
-  }
-});
 
 modeToggle.addEventListener("click", () => {
   let mode = modeToggle.getAttribute("currentMode");
@@ -84,52 +118,32 @@ modeToggle.addEventListener("click", () => {
       logo.src = `/Assets/DarkEnginesLibraryLogo${mode}.png`;
     });
   }
-
-  console.log(currentMode);
-  console.log(logo);
 });
 
-// functions
+dropDownMenu.addEventListener("click", () => {
+  let isAriaExpanded = dropDownMenu.getAttribute("aria-expanded");
 
-function asideFadeIn() {
-  let isOnMobileMode = screen.width <= 500;
-  if (!isOnMobileMode) {
-    asideFixed.setAttribute("onMobile", true);
-    socialAsideLinks.forEach((link, index) => {
-      // fade in each link individually
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `AsideLinksFadeAnim 0.5s linear forwards ${
-          index / 3 + 1.2
-        }s`;
-        link.style.animationDelay = `${index / 4 + 0.1}s`;
-      }
-    });
-  } else {
-    asideFixed.setAttribute("onMobile", false);
+  if (isAriaExpanded === "false") {
+    dropDownMenu.setAttribute("aria-expanded", true);
+  } else if (isAriaExpanded === "true") {
+    dropDownMenu.setAttribute("aria-expanded", false);
   }
-}
-
-
-
+});
 
 const navBtn = document.querySelector(".navButton");
 const navLinks = document.querySelectorAll(".pageLink");
 const menu = document.querySelector(".mainNav");
 navBtn.addEventListener("click", () => {
   // Menu visible
-  console.log("clicked");
-  isToggled = menu.getAttribute("aria-expanded");
-  console.log(navBtn.getAttribute("isToggled"));
-  if (isToggled == "false") {
-    navBtn.classList.add("tog");
-    navBtn.setAttribute("isToggled", true);
-    menu.setAttribute("aria-expanded", true);
-  } else if (isToggled == "true") {
-    navBtn.classList.remove("tog");
-    navBtn.setAttribute("isToggled", false);
-    menu.setAttribute("aria-expanded", false);
+  isExpanded = navBtn.getAttribute("isToggled");
+  if (isExpanded == "false") {
+    console.log(isExpanded);
+    navBtn.setAttribute("isToggled", "true");
+    menu.setAttribute("isToggled", "true");
+  } else if ( isExpanded == "true" ) {
+    console.log(isExpanded);
+    navBtn.setAttribute("isToggled", "false");
+    menu.setAttribute("aria-expanded", "false");
   }
 
   // navigation Links animation
@@ -145,6 +159,3 @@ navBtn.addEventListener("click", () => {
     }
   });
 });
-
-
-

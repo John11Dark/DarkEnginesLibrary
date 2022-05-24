@@ -100,11 +100,11 @@ footer {
 
 .userName {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 1;
 }
 .phoneNumber {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 2;
 }
 
 .emailAddress {
@@ -247,4 +247,8 @@ footer {
     max-width: 25px !important;
     max-height: 25px !important;
   }
+}
+.notificationCenter{
+top: 0;
+right: 0 !important;
 }

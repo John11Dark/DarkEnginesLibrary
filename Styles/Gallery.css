@@ -157,8 +157,82 @@
 }
 
 .aboutTopic {
-  visibility: visible !important;
-  display: grid ;
+  display: grid;
   min-height: 100vh;
-  width: 100;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  place-content: space-around;
+  place-items: center;
+  place-self: center;
+  padding: 0 5em;
+  text-align: left;
+  visibility: hidden;
+  display: none;
+}
+
+.aboutTopic[isToggled="true"] {
+  visibility: visible;
+  display: grid;
+}
+.topicTitleExpanded {
+  font-size: var(--headTitleFontSizeLarger);
+  font-family: var(--tertiaryFontExtra);
+  color: var(--primaryColor);
+  text-shadow: var(--textThreeD);
+  filter: drop-shadow(0 0 1px rgb(20, 20, 20));
+}
+
+.aboutSectionCard {
+  overflow: hidden;
+  padding: 4em 2em;
+  margin: 1em;
+  display: grid;
+  align-items: left;
+  justify-content: left;
+  gap: 1em;
+  background-color: var(--primaryCardColor);
+  border-radius: var(--cardBorderRadius);
+  box-shadow: var(--boxShadowLightBehind);
+}
+.flex {
+  display: flex;
+  width: 100%;
+  place-self: left;
+  align-items: left;
+  padding: 0;
+  gap: 0 5em;
+}
+.articleHeading {
+  font-size: calc(var(--titleFontSize) + 0.1vw);
+}
+
+.articleDescription {
+  font-size: calc(var(--paragraphFontSize) + 0.1vw);
+  line-height: 1.8;
+  max-width: 70%;
+  padding: 0.1em;
+  text-overflow: clip;
+  text-shadow: 0 0 1px var(--primaryColorDark);
+}
+
+.articleImage {
+  background-color: aliceblue;
+  width: 25%;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: var(--cardBorderRadius);
+  cursor: pointer;
+}
+
+.findRelatedContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bottom {
+  color: var(--primaryColorLight) !important;
+  text-shadow: 0 0 1px var(--primaryColorDark);
+  line-height: 1.3;
 }

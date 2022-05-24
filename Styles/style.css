@@ -1078,28 +1078,21 @@ ul.linksList, ul.aboutBookList {
   }
   100% {
     opacity: 1;
-    transform: translateX(-170%) translateY(100%);
+    transform: translateX(-100%) translateY(10%);
   }
 }
 
 @keyframes slideOut {
   0% {
     opacity: 1;
-    transform: translate(-100, 100%);
+    transform: translate(10, -100%);
   }
   100% {
     opacity: 0;
-    transform: translate(100%, 100%);
+    transform: translate(10%, 100%);
   }
 }
 
-use {
-  pointer-events: none;
-}
-.globalData {
-  position: absolute;
-  transform: translate(-25555555555555%, -2555555555555%);
-}
 
 @keyframes rotate-right {
   0% {
@@ -1124,4 +1117,11 @@ use {
     transform: translateX(0%);
     opacity: 1;
   }
+}
+use {
+  pointer-events: none;
+}
+.globalData {
+  position: absolute;
+  transform: translate(-25555555555555%, -2555555555555%);
 }

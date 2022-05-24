@@ -137,7 +137,6 @@ navBtn.addEventListener("click", () => {
   // Menu visible
   isExpanded = navBtn.getAttribute("isToggled");
   if (isExpanded == "false") {
-    console.log(isExpanded);
     navBtn.setAttribute("isToggled", "true");
     menu.setAttribute("isToggled", "true");
   } else if (isExpanded == "true") {

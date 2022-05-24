@@ -30,27 +30,8 @@
       <link rel="stylesheet" href="/Styles/Contact.css">
       <!-- Scripts -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
-<!--       <script src="/JS/vanilla js/main.js" defer></script>
- -->      <script src="/JS/JQuery/app.js" defer></script>
-      <script defer>
-                const selectOptions = document.querySelector( "#countriesCodeOptions" );
-                const inputOptions = document.querySelector("#countriesCode");
-
-               fetch( "/Assets/Data/countriesCode.json" )
-               .then( response =>response.json())
-               .then( countries => {
-                   countries.forEach(country => {
-                       const option = document.createElement("option");
-                       option.value = `${country.code} ${country.dialCode}`; 
-                       option.append(country.name);
-                       selectOptions.append(option);
-                       if (country.name == "Malta" || country.name == "malta"){
-                           inputOptions.setAttribute( "placeholder", `${country.code} ${country.dialCode}`);
-                       }
-                   });
-
-               });
-      </script>
+       <script src="/JS/vanilla js/main.js" defer></script>
+        <script src="/JS/JQuery/app.js" defer></script>
    </head>
    <body anObjectExpanded="false" isUserLoggedIn="false">
 
@@ -92,7 +73,7 @@
             />
          </a>
 
-         <nav class="mainNav" aria-expanded="true" isToggled="false">
+         <nav class="mainNav" aria-expanded="false" isToggled="false">
             <ul class="linksList">
                <li class="linkParent"><a isCurrentPage="false"  class="pageLink" title="Dark Engines Library Home page"    href="/Pages/home.html" class="pageLink">Home</a></li>
                <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Books page"   href="/Pages/Books.html" class="pageLink">Books</a></li>

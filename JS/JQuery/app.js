@@ -20,6 +20,26 @@ function customAlert(message) {
   });
 }
 
+const selectOptions = document.querySelector("#countriesCodeOptions");
+const inputOptions = document.querySelector("#countriesCode");
+
+fetch("/Assets/Data/countriesCode.json")
+  .then((response) => response.json())
+  .then((countries) => {
+    countries.forEach((country) => {
+      const option = document.createElement("option");
+      option.value = `${country.code} ${country.dialCode}`;
+      option.append(country.name);
+      selectOptions.append(option);
+      if (country.name == "Malta" || country.name == "malta") {
+        inputOptions.setAttribute(
+          "placeholder",
+          `${country.code} ${country.dialCode}`
+        );
+      }
+    });
+  });
+
 /// input fields for validation
 const phoneNumber = document.querySelector("#userNameInputField");
 const fullName = document.querySelector("#phoneNumber");
@@ -119,20 +139,22 @@ $(".contactForm").submit(function () {
 });
 
 // Jquery toggle button
-
-const navBtn = $(".navButton");
-const navLinks = $(".pageLink");
-const menu = $(".mainNav");
-navBtn.click(() => {
+// to try this function please try to disable the main js
+//<script src="/JS/vanilla js/main.js" defer></script>
+//if you try it while the other not disable
+//one script will open it and the other one will close it
+const newNavBtn = $(".navButton");
+const newMenu = $(".mainNav");
+newNavBtn.click(() => {
   // Menu visible
-  isExpanded = navBtn.attr("isToggled");
-  if (isExpanded == "false") {
-    //console.log(isExpanded);
-    navBtn.attr("isToggled", "true");
-    menu.attr("isToggled", "true");
-  } else if (isExpanded == "true") {
-    //console.log(isExpanded);
-    navBtn.attr("isToggled", "false");
-    menu.attr("aria-expanded", "false");
+  isExpanded = newNavBtn.attr("isToggled");
+  if (isExpanded === "false") {
+    //console.log(isExpanded, "JQ");
+    newNavBtn.attr("isToggled", "true");
+    newMenu.attr("isToggled", "true");
+  } else if (isExpanded === "true") {
+    //console.log(isExpanded, "JQ");
+    newNavBtn.attr("isToggled", "false");
+    newMenu.attr("isToggled", "false");
   }
 });

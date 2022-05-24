@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta property="og:url" content="https://darkengineslibary.netlify.app/">
-      <meta property="og:title" content="Dark Engines Library">
-      <meta property="og:image" content="/Assets/Dark Engines Library Logo Dark.png">
-      <meta name="author" content="John Muller">
-      <meta name="description" content="Dark Engines online Library for IT books and content">
-      <meta name="keywords"
-         content="John Muller, John, JohnDark, Muller, portfolio, junior developer, graphic designer, IT Books, Dark Engines Library, learn development, IT knowledge">
-      <meta name="color-scheme" content="light dark">
-      <!-- is not supported by Firefox < 96, Internet Explorer. -->
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Dark Engines Library| About</title>
-      <link
-         rel="shortcut icon"
-         href="/Assets/DarkEnginesLibraryLogoDark.png"
-         type="image/x-icon"
-         />
-      <!-- Fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Pacifico&display=swap"rel="stylesheet"/>
-      <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Pacifico&display=swap" rel="stylesheet">
-      <!-- Styles -->
-      <link rel="stylesheet" href="/Styles/style.css"/>
-      <link rel="stylesheet" href="/Styles/about.css">
-      <!-- Scripts -->
-      <script src="/JS/vanilla js/main.js" defer></script>
-      <script src="/JS/JQuery/mainJQ.js" defer></script>
-      
-
-   </head>
-   <body anObjectExpanded="false" isUserLoggedIn="false">
-
-      <!-- 
+  <head>
+    <meta property="og:url" content="https://darkengineslibary.netlify.app/" />
+    <meta property="og:title" content="Dark Engines Library" />
+    <meta
+      property="og:image"
+      content="/Assets/Dark Engines Library Logo Dark.png"
+    />
+    <meta name="author" content="John Muller" />
+    <meta
+      name="description"
+      content="Dark Engines online Library for IT books and content"
+    />
+    <meta
+      name="keywords"
+      content="John Muller, John, JohnDark, Muller, portfolio, junior developer, graphic designer, IT Books, Dark Engines Library, learn development, IT knowledge"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <!-- is not supported by Firefox < 96, Internet Explorer. -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Engines Library| About</title>
+    <link
+      rel="shortcut icon"
+      href="/Assets/DarkEnginesLibraryLogoDark.png"
+      type="image/x-icon"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/Styles/style.css" />
+    <link rel="stylesheet" href="/Styles/about.css" />
+    <!-- Scripts -->
+    <script src="/JS/vanilla js/main.js" defer></script>
+    <script src="/JS/JQuery/mainJQ.js" defer></script>
+  </head>
+  <body anObjectExpanded="false" isUserLoggedIn="false">
+    <!-- 
          Body Content
          it has two attributes anObjectExpanded isUserLoggedIn
          by defaults both of them set to false because the page just loaded
@@ -44,105 +58,177 @@
          ifUserLogged in == true then the user panel menu will be clickable   
       -->
 
-      <!-- Skip header and navigation bar -->
-      <a aria-hidden="false" aria-label="skip navigation bar button" title="skip navigation bar" href="#mainContent"
-         id="skipNavLink" class="SkipNav">skip navigation bar</a>
+    <!-- Skip header and navigation bar -->
+    <a
+      aria-hidden="false"
+      aria-label="skip navigation bar button"
+      title="skip navigation bar"
+      href="#mainContent"
+      id="skipNavLink"
+      class="SkipNav"
+      >skip navigation bar</a
+    >
 
-      <!-- page header and navigation bar -->
-      <header isIntersecting="false">
-        
-         <a title="Home page" class="logoParent" href="/Pages/home.html">
-         <img
-            mode="Dark"
-            id="mainLogo"
-            class="mainLogo Logo"
-            src="/Assets/DarkEnginesLibraryLogoLight.png"
-            alt="Dark Engines Library logo"
-            />
-         </a>
+    <!-- page header and navigation bar -->
+    <header isIntersecting="false">
+      <a title="Home page" class="logoParent" href="/Pages/home.html">
+        <img
+          mode="Dark"
+          id="mainLogo"
+          class="mainLogo Logo"
+          src="/Assets/DarkEnginesLibraryLogoLight.png"
+          alt="Dark Engines Library logo"
+        />
+      </a>
 
-         <nav class="mainNav" aria-expanded="true" isToggled="false">
-            <ul class="linksList">
-               <li class="linkParent"><a isCurrentPage="false"  class="pageLink" title="Dark Engines Library Home page"    href="/Pages/home.html" class="pageLink">Home</a></li>
-               <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Books page"   href="/Pages/Books.html" class="pageLink">Books</a></li>
-               <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Gallery page" href="/Pages/Gallery.html" class="pageLink">Gallery</a></li>
-               <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Contact page" href="/Pages/Contact.html" class="pageLink">Contact</a></li>
-               <li class="linkParent"><a isCurrentPage="true" class="pageLink" title="Dark Engines Library About page"   href="/Pages/About.html" class="pageLink">About</a></li>
-            </ul>
-            <dropDownMenu aria-expanded="false" class="dropDown">
-               <img class="userAvatar" src="/Assets/userAvatar.webp" alt="User avatar">
-               <ul class="dropDownList">
-                  <li class="dropDownLinkParent" id="userName" userName="User Name"></li>
-                  <li class="dropDownLinkParent">
-                     <a title="Account page" href="#" class="dropDownLink">
-                        <svg class="dropDownSvgIcon">
-                           <use xlink:href="#USER-ICON"></use>
-                        </svg>
-                        Account
-                     </a>
-                  </li>
-                  <li >
-                  <li class="dropDownLinkParent">
-                     <a title="Cart page" href="/Pages/account.html#cart" class="dropDownLink">
-                        <svg class="dropDownSvgIcon">
-                           <use xlink:href="#CART-ICON"></use>
-                        </svg>
-                        Cart
-                     </a>
-                  </li>
-                  <li class="dropDownLinkParent ">
-                     <a title="Settings page" href="/Pages/account.html#settingsSection" class="dropDownLink">
-                        <svg class="dropDownSvgIcon">
-                           <use xlink:href="#GEARS-ICON"></use>
-                        </svg>
-                        Settings
-                     </a>
-                  </li>
-                  <li class="dropDownLinkParent">
-                     <a title="Cart page" href="/Pages/About.html#HelpSection" class="dropDownLink">
-                        <svg class="dropDownSvgIcon">
-                           <use xlink:href="#HELP-ICON"></use>
-                        </svg>
-                        Help
-                     </a>
-                  </li>
-                  <li class="dropDownLinkParent" id="logoutButton">
-                     <a title="logout" href="#" class="dropDownLink">
-                        <svg class="dropDownSvgIcon">
-                           <use xlink:href="#LOGOUT-ICON"></use>
-                        </svg>
-                        Logout
-                     </a>
-                  </li>
-                            <li class="SwitchModes" currentMode="Dark">
-            <svg class="themeIcon DarkMode" >
-              <use class="linkX" xlink:href="#DARK-MODE-ICON"></use>
-            </svg>
-            <svg class="themeIcon LightMode">
-              <use xlink:href="#LIGHT-MODE-ICON"></use>
-            </svg>
+      <nav class="mainNav" aria-expanded="true" isToggled="false">
+        <ul class="linksList">
+          <li class="linkParent">
+            <a
+              isCurrentPage="false"
+              class="pageLink"
+              title="Dark Engines Library Home page"
+              href="/Pages/home.html"
+              class="pageLink"
+              >Home</a
+            >
           </li>
-               </ul>
-            </dropDownMenu>
-         </nav>
-      </header>
-
-
-      <main class="mainContent">
-             <a id="contactButton" 
-               class="button PrimaryBtn homePageLink" 
-               title="Contact Page"
-               href="/Pages/home.html"
-               type="button" >
-               Go back 
-               <svg class="btnSvgIcon" viewBox="0 0 576 512">
-                    <path 
-                    d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"/>
+          <li class="linkParent">
+            <a
+              isCurrentPage="false"
+              class="pageLink"
+              title="Dark Engines Library Books page"
+              href="/Pages/Books.html"
+              class="pageLink"
+              >Books</a
+            >
+          </li>
+          <li class="linkParent">
+            <a
+              isCurrentPage="false"
+              class="pageLink"
+              title="Dark Engines Library Gallery page"
+              href="/Pages/Gallery.html"
+              class="pageLink"
+              >Gallery</a
+            >
+          </li>
+          <li class="linkParent">
+            <a
+              isCurrentPage="false"
+              class="pageLink"
+              title="Dark Engines Library Contact page"
+              href="/Pages/Contact.html"
+              class="pageLink"
+              >Contact</a
+            >
+          </li>
+          <li class="linkParent">
+            <a
+              isCurrentPage="true"
+              class="pageLink"
+              title="Dark Engines Library About page"
+              href="/Pages/About.html"
+              class="pageLink"
+              >About</a
+            >
+          </li>
+        </ul>
+        <dropDownMenu aria-expanded="false" class="dropDown">
+          <img
+            class="userAvatar"
+            src="/Assets/userAvatar.webp"
+            alt="User avatar"
+          />
+          <ul class="dropDownList">
+            <li
+              class="dropDownLinkParent"
+              id="userName"
+              userName="User Name"
+            ></li>
+            <li class="dropDownLinkParent">
+              <a title="Account page" href="#" class="dropDownLink">
+                <svg class="dropDownSvgIcon">
+                  <use xlink:href="#USER-ICON"></use>
                 </svg>
-            </a>
-      </main>
-      <section class="globalData">
-         
+                Account
+              </a>
+            </li>
+            <li></li>
+            <li class="dropDownLinkParent">
+              <a
+                title="Cart page"
+                href="/Pages/account.html#cart"
+                class="dropDownLink"
+              >
+                <svg class="dropDownSvgIcon">
+                  <use xlink:href="#CART-ICON"></use>
+                </svg>
+                Cart
+              </a>
+            </li>
+            <li class="dropDownLinkParent">
+              <a
+                title="Settings page"
+                href="/Pages/account.html#settingsSection"
+                class="dropDownLink"
+              >
+                <svg class="dropDownSvgIcon">
+                  <use xlink:href="#GEARS-ICON"></use>
+                </svg>
+                Settings
+              </a>
+            </li>
+            <li class="dropDownLinkParent">
+              <a
+                title="Cart page"
+                href="/Pages/About.html#HelpSection"
+                class="dropDownLink"
+              >
+                <svg class="dropDownSvgIcon">
+                  <use xlink:href="#HELP-ICON"></use>
+                </svg>
+                Help
+              </a>
+            </li>
+            <li class="dropDownLinkParent" id="logoutButton">
+              <a title="logout" href="#" class="dropDownLink">
+                <svg class="dropDownSvgIcon">
+                  <use xlink:href="#LOGOUT-ICON"></use>
+                </svg>
+                Logout
+              </a>
+            </li>
+            <li class="SwitchModes" currentMode="Dark">
+              <svg class="themeIcon DarkMode">
+                <use class="linkX" xlink:href="#DARK-MODE-ICON"></use>
+              </svg>
+              <svg class="themeIcon LightMode">
+                <use xlink:href="#LIGHT-MODE-ICON"></use>
+              </svg>
+            </li>
+          </ul>
+        </dropDownMenu>
+      </nav>
+    </header>
+
+    <main class="mainContent">
+      <a
+        id="contactButton"
+        class="button PrimaryBtn homePageLink"
+        title="Contact Page"
+        href="/Pages/home.html"
+        type="button"
+      >
+        Go back
+        <svg class="btnSvgIcon" viewBox="0 0 576 512">
+          <path
+            d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"
+          />
+        </svg>
+      </a>
+    </main>
+    <section class="globalData">
       <!-- dark Mode icon -->
       <svg xmlns="http://www.w3.org/2000/svg">
         <symbol
@@ -186,7 +272,6 @@
           />
         </symbol>
       </svg>
-      </section>
-
-   </body>
+    </section>
+  </body>
 </html>

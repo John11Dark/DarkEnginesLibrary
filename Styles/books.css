@@ -29,7 +29,7 @@
   line-height: 1.6;
   width: 110%;
 }
-.searchResultTitle{
+.searchResultTitle {
   text-transform: capitalize;
 }
 .Query {
@@ -104,7 +104,6 @@
   line-height: 1.4;
   max-height: 3rem;
   overflow: hidden;
-
 }
 .bookTitle::-webkit-scrollbar {
   display: none;
@@ -119,17 +118,16 @@
   height: 0.4rem;
   border-radius: 1rem;
   background-color: var(--primaryColorLight);
-  
 }
 
 .bookSubtitle {
   position: relative;
   color: var(--primaryColorLight);
-    max-height: 80%;
-    overflow: scroll;
+  max-height: 80%;
+  overflow: scroll;
 }
-.bookSubtitle::-webkit-scrollbar{
-display: none;
+.bookSubtitle::-webkit-scrollbar {
+  display: none;
 }
 
 ul.aboutBookList {
@@ -154,7 +152,6 @@ ul.aboutBookList {
   font-weight: bolder;
   width: 100%;
   color: var(--primaryColorLight);
-
 }
 
 .bookIcon {
@@ -247,10 +244,7 @@ ul.aboutBookList {
   display: none;
 }
 
-
-
-.svgIcon{
-max-width: 25px;
-max-height: 25px;
-
+.svgIcon {
+  max-width: 25px;
+  max-height: 25px;
 }

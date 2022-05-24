@@ -1022,7 +1022,7 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
-  .userAvatar{
+  .userAvatar {
     display: none;
   }
   .searchBar {
@@ -1042,8 +1042,8 @@ footer {
   .pageLink {
     font-size: calc(var(--subTitleFontSize) + 0.5rem);
   }
-  .pageLink[animation="true"]{
-        transform: translate(500%);
+  .pageLink[animation="true"] {
+    transform: translate(500%);
     animation-fill-mode: forwards;
   }
   .logoParent {

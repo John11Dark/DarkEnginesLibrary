@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Online IT library for developers and CS Students  ",
   "main": "index.html",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/John11Dark/DarkEnginesLibrary.git"

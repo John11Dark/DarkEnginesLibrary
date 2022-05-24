@@ -140,7 +140,7 @@ navBtn.addEventListener("click", () => {
     console.log(isExpanded);
     navBtn.setAttribute("isToggled", "true");
     menu.setAttribute("isToggled", "true");
-  } else if ( isExpanded == "true" ) {
+  } else if (isExpanded == "true") {
     console.log(isExpanded);
     navBtn.setAttribute("isToggled", "false");
     menu.setAttribute("aria-expanded", "false");
@@ -149,6 +149,7 @@ navBtn.addEventListener("click", () => {
   // navigation Links animation
 
   navLinks.forEach((link, index) => {
+    link.setAttribute("animation", true);
     if (link.style.animation) {
       link.style.animation = "";
     } else {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta property="og:url" content="https:///">
+      <meta property="og:url" content="https://darkengineslibary.netlify.app/">
       <meta property="og:title" content="Dark Engines Library">
       <meta property="og:image" content="/Assets/Dark Engines Library Logo Dark.png">
       <meta name="author" content="John Muller">
@@ -27,7 +27,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Pacifico&display=swap" rel="stylesheet">
       <!-- Styles -->
       <link rel="stylesheet" href="/Styles/style.css"/>
-      <link rel="stylesheet" href="/Styles/Contact.css">
+      <link rel="stylesheet" href="/Styles/about.css">
       <!-- Scripts -->
       <script src="/JS/vanilla js/main.js" defer></script>
       <script src="/JS/JQuery/mainJQ.js" defer></script>
@@ -50,6 +50,7 @@
 
       <!-- page header and navigation bar -->
       <header isIntersecting="false">
+        
          <a title="Home page" class="logoParent" href="/Pages/home.html">
          <img
             mode="Dark"
@@ -60,7 +61,7 @@
             />
          </a>
 
-         <nav class="mainNav" aria-expanded="true" isToggled="true">
+         <nav class="mainNav" aria-expanded="true" isToggled="false">
             <ul class="linksList">
                <li class="linkParent"><a isCurrentPage="false"  class="pageLink" title="Dark Engines Library Home page"    href="/Pages/home.html" class="pageLink">Home</a></li>
                <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Books page"   href="/Pages/Books.html" class="pageLink">Books</a></li>
@@ -68,7 +69,7 @@
                <li class="linkParent"><a isCurrentPage="false" class="pageLink" title="Dark Engines Library Contact page" href="/Pages/Contact.html" class="pageLink">Contact</a></li>
                <li class="linkParent"><a isCurrentPage="true" class="pageLink" title="Dark Engines Library About page"   href="/Pages/About.html" class="pageLink">About</a></li>
             </ul>
-            <dropDownMenu aria-expanded="true" class="dropDown">
+            <dropDownMenu aria-expanded="false" class="dropDown">
                <img class="userAvatar" src="/Assets/userAvatar.webp" alt="User avatar">
                <ul class="dropDownList">
                   <li class="dropDownLinkParent" id="userName" userName="User Name"></li>
@@ -124,14 +125,11 @@
                </ul>
             </dropDownMenu>
          </nav>
-
-
       </header>
 
 
-      <main>
-          <h1 class="title MainTitle">Sorry this page are not available at the moment. </h1>
-          <a id="contactButton" 
+      <main class="mainContent">
+             <a id="contactButton" 
                class="button PrimaryBtn homePageLink" 
                title="Contact Page"
                href="/Pages/home.html"
@@ -142,71 +140,7 @@
                     d="M575.8 255.5C575.8 273.5 560.8 287.6 543.8 287.6H511.8L512.5 447.7C512.5 450.5 512.3 453.1 512 455.8V472C512 494.1 494.1 512 472 512H456C454.9 512 453.8 511.1 452.7 511.9C451.3 511.1 449.9 512 448.5 512H392C369.9 512 352 494.1 352 472V384C352 366.3 337.7 352 320 352H256C238.3 352 224 366.3 224 384V472C224 494.1 206.1 512 184 512H128.1C126.6 512 125.1 511.9 123.6 511.8C122.4 511.9 121.2 512 120 512H104C81.91 512 64 494.1 64 472V360C64 359.1 64.03 358.1 64.09 357.2V287.6H32.05C14.02 287.6 0 273.5 0 255.5C0 246.5 3.004 238.5 10.01 231.5L266.4 8.016C273.4 1.002 281.4 0 288.4 0C295.4 0 303.4 2.004 309.5 7.014L564.8 231.5C572.8 238.5 576.9 246.5 575.8 255.5L575.8 255.5z"/>
                 </svg>
             </a>
-
-      </a>
       </main>
-      <!-- Page footer -->
-      <footer>
-    
-
-         <!-- Logo footer -->
-         <img
-            mode="Dark"
-            id="footerLogo"
-            class="footerLogo Logo"
-            src="/Assets/DarkEnginesLibraryLogoLight.png"
-            alt="Dark Engines Library logo"
-            />
-             <!-- social links list ==>links to social accounts  -->
-         <aside class="socialLinksAside">
-            <ul class="linksList">
-               <li class="linkParent">
-                  <a class="socialLins" title="Find us on" href="#">
-                     <svg class="socialIconsSVGs">
-                        <use xlink:href="#INSTAGRAMICON"></use>
-                     </svg>
-                  </a>
-               </li>
-               <li class="linkParent">
-                  <a class="socialLins" title="Find us on" href="#">
-                     <svg class="socialIconsSVGs">
-                        <use xlink:href="#FACEBOOKICON"></use>
-                     </svg>
-                  </a>
-               </li>
-               <li class="linkParent">
-                  <a class="socialLins" title="Find us on" href="#">
-                     <svg class="socialIconsSVGs">
-                        <use xlink:href="#TWITTERICON"></use>
-                     </svg>
-                  </a>
-               </li>
-               <li class="linkParent">
-                  <a class="socialLins" title="Find us on" href="#">
-                     <svg class="socialIconsSVGs">
-                        <use xlink:href="#WHATSAPPICON"></use>
-                     </svg>
-                  </a>
-               </li>
-               <li class="linkParent">
-                  <a class="socialLins" title="Find us on" href="#">
-                     <svg class="socialIconsSVGs">
-                        <use xlink:href="#EMAILICON"></use>
-                     </svg>
-                  </a>
-               </li>
-            </ul>
-         </aside>
-
-
-         <!-- copy right  -->
-         <h6 class="copyRight">
-         Copyright &COPY; 2022-Today Dark Engines Company, Created by  <a class="author" authorName="John Muller" href="https://john11dark.github.io/John-Muller/" >J.M</a>  All rights reserved.
-         <h6>
-
-         </section>
-      </footer>
-
       <section class="globalData">
          
       <!-- dark Mode icon -->

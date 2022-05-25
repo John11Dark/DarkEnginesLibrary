@@ -1074,25 +1074,24 @@ ul.linksList, ul.aboutBookList {
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateX(100%) translateY(-100%);
+    transform: translateX(100%) translateY(-20%);
   }
   100% {
     opacity: 1;
-    transform: translateX(-100%) translateY(10%);
+    transform: translateX(-100%) translateY(-20%);
   }
 }
 
 @keyframes slideOut {
   0% {
     opacity: 1;
-    transform: translate(10, -100%);
+    transform: translate(10, -20%);
   }
   100% {
     opacity: 0;
-    transform: translate(10%, 100%);
+    transform: translate(10%, -20%);
   }
 }
-
 
 @keyframes rotate-right {
   0% {

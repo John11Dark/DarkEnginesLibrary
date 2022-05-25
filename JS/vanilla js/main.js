@@ -78,11 +78,13 @@ if (userModePreference.matches) {
     //Dark Mode
     logo.src = `/Assets/DarkEnginesLibraryLogoLight.png`;
   });
+  modeToggle.setAttribute("currentMode", "Dark");
 } else if (!userModePreference.matches) {
   //Light Mode
   Logos.forEach((logo) => {
     logo.src = `/Assets/DarkEnginesLibraryLogoDark.png`;
   });
+  modeToggle.setAttribute("currentMode", "Light");
 }
 
 modeToggle.addEventListener("click", () => {
